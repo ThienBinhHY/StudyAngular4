@@ -1,0 +1,43 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to {{title}}!
+  </h1>
+</div>
+<ul>
+  <li>
+    <h2><a target="_blank" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
+  </li>
+  <li>
+    <h2><a target="_blank" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
+  </li>
+  <li>
+    <h2><a target="_blank" href="http://angularjs.blogspot.ca/">Angular blog</a></h2>
+  </li>
+</ul>
+<h2>NAME: {{user.name}}</h2>
+<div>
+  <h2> Tự học Angular 4-4:Data binding trong Angular</h2>
+  <input [(ngModel)]="user.name" placeholder="Type your name....">
+</div>
+<div>
+  <h2> Tự học Angular 4-5:Tạo một trang Master/Detail căn bản.</h2>
+  <ul class="users">
+    <!--khi eachUser=== selectedUser thi class selected se dc kích hoạt-->
+    <li *ngFor="let eachUser of users" 
+      [class.selected]="eachUser === selectedUser" 
+      (click)="onSelect(eachUser)"
+    >
+      <span class="badge">{{eachUser.id}}</span> {{eachUser.name}}
+    </li>
+  </ul>
+  <!--When selectedUser is not NULL, it come to that div-->
+  <div *ngIf="selectedUser">
+    <h2>You selected: {{selectedUser.name}} with details:</h2>
+    <div><label>User id: </label>{{selectedUser.id}}</div>
+    <div>
+      <label>name: </label>
+      <input [(ngModel)]="selectedUser.name" placeholder="Edit your name here" />
+    </div>
+  </div>
+</div>
