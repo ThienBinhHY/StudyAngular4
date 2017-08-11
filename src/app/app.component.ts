@@ -28,7 +28,7 @@ const USERS: User[] = [
 ];
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
+  templateUrl: './template/app.component.html',
   /*
   Viết html luôn ở đây thì dùng cú pháp như sau
   template: '<h2>{{user.email}}</h2>'
